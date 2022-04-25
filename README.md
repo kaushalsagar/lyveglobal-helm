@@ -7,7 +7,7 @@ dependencies:
   repository: "file://charts/levy-mongodb"
 
 #Command to view the complete yaml
-#helm template levy-nodejs -f levy-nodesj/values.yaml ./levy-nodejs/
+helm template levy-nodejs -f levy-nodesj/values.yaml ./levy-nodejs/
 
 
 #Command to install the chart.
