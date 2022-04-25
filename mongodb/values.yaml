@@ -1,0 +1,11 @@
+mongo:
+  replicas: 1
+  image: mongo
+  tag: latest
+  secretname: mongo-creds
+  username: username
+  password: password
+mongoservice:
+  name: mongodbhostsvc
+  port: 27017
+  targetPort : 27017
