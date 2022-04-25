@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: node
+  name: {{ .Values.nodeservice.name }}
+spec:
+  ports:
+  - port: {{ .Values.nodeservice.port }}
+    protocol: TCP
+    targetPort: {{ .Values.nodeservice.targetPort }}
+  selector:
+    app: nodeapp
+  type: ClusterIP
+status:
+  loadBalancer: {}
