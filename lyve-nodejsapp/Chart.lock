@@ -1,0 +1,6 @@
+dependencies:
+- name: lyve-mongodb
+  repository: file://../lyve-mongodb
+  version: 1.0.0
+digest: sha256:93ac8df852ade2f461d27bce1c7d82eae9f8373ffd05c6b8c8600f37c4b58b10
+generated: "2022-04-25T12:16:58.323731228Z"
