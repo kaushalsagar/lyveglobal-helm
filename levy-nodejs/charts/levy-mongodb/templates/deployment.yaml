@@ -53,4 +53,3 @@ spec:
             secretKeyRef:
               name: {{ .Values.mongo.secretname }}
               key: {{ .Values.mongo.password }}
-

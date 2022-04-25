@@ -5,6 +5,7 @@ mongo:
   secretname: mongo-creds
   username: username
   password: password
+
 mongoservice:
   name: mongodbhostsvc
   port: 27017

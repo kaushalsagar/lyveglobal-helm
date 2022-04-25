@@ -1,0 +1,13 @@
+node:
+  replicas: 1
+  image: sagarkaushal1/nodeapp-sagar
+  tag: 6
+
+nodeservice:
+  name: nodesvc
+  port: 4000
+  targetPort: 4000
+
+ingress:
+  domain: casestudy.sagar.com
+  name: casestudyingress

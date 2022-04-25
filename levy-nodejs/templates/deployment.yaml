@@ -15,10 +15,6 @@ spec:
         app: nodeapp
       name: nodeapp
     spec:
-      initContainers:
-        - name: init-db
-          image: busybox:1.31
-          command: ['sh', '-c', 'echo -e "Checking for the availability of mongodb"; while ! nc -z {{ .Values.mongoservice.name }} 27017; do sleep 1; printf "-"; done; echo -e "  >> Mongodb is up";']
       containers:
       - image: {{ .Values.node.image }}:{{ .Values.node.tag }}
         imagePullPolicy: IfNotPresent
