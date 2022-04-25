@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "levy-mongodb.name" -}}
+{{- define "lyve-nodejs.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "levy-mongodb.fullname" -}}
+{{- define "lyve-nodejs.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,16 +27,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "levy-mongodb.chart" -}}
+{{- define "lyve-nodejs.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "levy-mongodb.labels" -}}
-helm.sh/chart: {{ include "levy-mongodb.chart" . }}
-{{ include "levy-mongodb.selectorLabels" . }}
+{{- define "lyve-nodejs.labels" -}}
+helm.sh/chart: {{ include "lyve-nodejs.chart" . }}
+{{ include "lyve-nodejs.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -46,17 +46,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "levy-mongodb.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "levy-mongodb.name" . }}
+{{- define "lyve-nodejs.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "lyve-nodejs.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "levy-mongodb.serviceAccountName" -}}
+{{- define "lyve-nodejs.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "levy-mongodb.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "lyve-nodejs.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
